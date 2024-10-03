@@ -1,5 +1,5 @@
-% Author: Your Name / your_email
-% Date: 2024-09-01
+% Author: Bikash Kunwar / bzk0067@auburn.edu
+% Date: 2024-10-02
 % Assignment Name: hw02
 
 classdef hw02
@@ -30,35 +30,31 @@ classdef hw02
                     n = n + 1;
                 end
             elseif strcmp(name, 'secant') % secant method
-                % Write your code here
-                n = 0;
-                c = inf;
+                maxIter = 100;
+                [c,n ] = secant(f, a, b, epsilon, maxIter);
             elseif strcmp(name, 'newton') % Newton's method
-                % Write your code here
-                n = 0;
-                c = inf;
+                maxIter = 100;
+                [c,n ] = newtonRaphson(f, f_prime, a, epsilon,maxIter);
             elseif strcmp(name, 'regula_falsi') % false position method
-                % Write your code here
-                n = 0;
-                c = inf;
+               maxIter = 100;
+                [c,n ] = falsePosition(f, a, b, epsilon, maxIter);
             elseif strcmp(name, 'steffensen') % Steffensen's method
-                % Write your code here
-                n = 0;
-                c = inf;
+                maxIter = 100;
+                [c,n] = steffensen(f, a, epsilon, maxIter);
             end
         end
 
         function p2()
             
         %     summarize the iteration number for each method name in the table
-        
+        %     first problem 
         %     |name          | iter | 
         %     |--------------|------|
-        %     |bisection     |      |
-        %     |secant        |      |
-        %     |newton        |      |
-        %     |regula_falsi  |      |
-        %     |steffensen    |      |
+        %     |bisection     | 28     |
+        %     |secant        | 4     |
+        %     |newton        | 3     |
+        %     |regula_falsi  |  11    |
+        %     |steffensen    |  6    |
             
         end
 
@@ -76,9 +72,7 @@ classdef hw02
             % c: real number, the root of the function
             % n: integer, the number of iterations
 
-            % Write your code here
-            c = inf;
-            n = inf;
+            [c, n ]= illinoisMethod(f, a, b, epsilon);
         end
 
         function [c, n] = p4(f, a, b, epsilon)
@@ -95,9 +89,7 @@ classdef hw02
             % c: real number, the root of the function
             % n: integer, the number of iterations
 
-            % Write your code here
-            c = inf;
-            n = inf;
+            [c,n] = pegasusMethod(f, a, b, epsilon);
         end
     end
 end
